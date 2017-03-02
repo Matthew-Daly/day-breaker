@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require 'day_breaker'
+
+DayBreaker::CLI.new.call
