@@ -21,7 +21,7 @@ class DayBreaker::CLI
 		-
 		Fact of the day: #{@fact.fact}
 		-
-		Number of the day: it is #{@number.day} of the year. After today, there are #{@number.remaining} in the year 'Time is slipping slipping slipping into the future' ... get on with it!
+		Number of the day: it is #{@number.day} of the year. After today, there are #{@number.remaining}. 'Time is slipping slipping slipping into the future' ... get on with it!
 		-
 		DOC
 	end
