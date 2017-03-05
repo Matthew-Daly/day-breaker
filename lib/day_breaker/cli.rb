@@ -8,21 +8,20 @@ class DayBreaker::CLI
 	end
 
 	def list_day_starters
-		puts "Good morning! Here are today's ponderers (is that even a word...here are some things to think aobut)."
+		puts "Good morning! Here are today's ponderers (is that even a word...anyway, here are some things to think about)."
 		@word = DayBreaker::Word.today
 		@quote = DayBreaker::Quote.today
 		@fact = DayBreaker::Fact.today
 		@number = DayBreaker::Number.today
 		puts <<-DOC.gsub /^\s*/,''
 		-
-		Word of the day: #{@word.name} - #{@word.definition}
+		Word of the day: #{@word.word} - #{@word.definition}
 		-
 		Quote of the day: #{@quote.text}
 		-
-		Fact of the day: #{@fact.question}:
-		#{@fact.answer}
+		Fact of the day: #{@fact.fact}
 		-
-		Number of the day: it is day #{@number.day} of the year #{@number.year}. 'Time is slipping slipping slipping into the future' ... get on with it!
+		Number of the day: it is #{@number.day} of the year. After today, there are #{@number.remaining} in the year 'Time is slipping slipping slipping into the future' ... get on with it!
 		-
 		DOC
 	end

@@ -1,3 +1,7 @@
+require "open-uri"
+require "nokogiri"
+require "pry"
+
 require_relative "day_breaker/version"
 require_relative "day_breaker/cli"
 require_relative "day_breaker/word"

@@ -1,11 +1,12 @@
 class DayBreaker::Word
-	attr_accessor :name, :definition, :url
+	attr_accessor :word, :definition, :url
 
 	def self.today
+		doc = Nokogiri::HTML(open("http://www.dictionary.com/wordoftheday/"))
 		word_day = self.new 
-		word_day.name = "bumbershoot"
-		word_day.definition = "Informal: Often Facetious. an umbrella."
-		word_day.url = "http://www.dictionary.com/wordoftheday/2017/02/27/bumbershoot"
+		word_day.word = doc.search("a.uploaded img").attr("alt").text
+		word_day.definition = doc.search("div.definition-box li").text
+		word_day.url = "http://www.dictionary.com/wordoftheday"
 		word_day
 	end
 end
